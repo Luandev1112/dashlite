@@ -1,0 +1,130 @@
+@import 'toasts-body';
+
+@mixin sweetalert2-body() {
+  &.swal2-shown {
+    @include not('.swal2-no-backdrop', '.swal2-toast-shown') {
+      overflow: hidden; // not overflow-y because of Sarari, #1253
+    }
+  }
+
+  &.swal2-height-auto {
+    height: auto !important; // #781 #1107
+  }
+
+  &.swal2-no-backdrop {
+    .swal2-container {
+      top: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      left: auto !important;
+      max-width: calc(100% - #{$swal2-container-padding} * 2) !important;
+      background-color: transparent !important;
+
+      & > .swal2-modal {
+        box-shadow: 0 0 10px $swal2-backdrop !important;
+      }
+
+      &.swal2-top {
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+      }
+
+      &.swal2-top-start,
+      &.swal2-top-left {
+        top: 0 !important;
+        @if($rtl==false){
+          left: 0 !important;
+        }
+        @if($rtl==true){
+          right: 0 !important;
+        }
+      }
+
+      &.swal2-top-end,
+      &.swal2-top-right {
+        top: 0 !important;
+        @if($rtl==false){
+          right: 0 !important;
+        }
+        @if($rtl==true){
+          left: 0 !important;
+        }
+      }
+
+      &.swal2-center {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+      }
+
+      &.swal2-center-start,
+      &.swal2-center-left {
+        top: 50% !important;
+        @if($rtl==false){
+          left: 0 !important;
+        }
+        @if($rtl==true){
+          right: 0 !important;
+        }
+        transform: translateY(-50%);
+      }
+
+      &.swal2-center-end,
+      &.swal2-center-right {
+        top: 50% !important;
+        @if($rtl==false){
+          right: 0 !important;
+        }
+        @if($rtl==true){
+          left: 0 !important;
+        }
+        transform: translateY(-50%) !important;
+      }
+
+      &.swal2-bottom {
+        bottom: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+      }
+
+      &.swal2-bottom-start,
+      &.swal2-bottom-left {
+        bottom: 0 !important;
+        @if($rtl==false){
+          left: 0 !important;
+        }
+        @if($rtl==true){
+          right: 0;
+        }
+      }
+
+      &.swal2-bottom-end,
+      &.swal2-bottom-right {
+        @if($rtl==false){
+          right: 0 !important;
+        }
+        @if($rtl==true){
+          left: 0;
+        }
+        bottom: 0 !important;
+      }
+    }
+  }
+
+  @media print {
+    &.swal2-shown {
+      @include not('.swal2-no-backdrop', '.swal2-toast-shown') {
+        overflow-y: scroll !important;
+
+        > [aria-hidden='true'] {
+          display: none !important;
+        }
+
+        .swal2-container {
+          position: static !important;
+        }
+      }
+    }
+  }
+}

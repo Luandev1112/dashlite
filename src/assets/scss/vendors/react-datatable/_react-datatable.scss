@@ -1,0 +1,49 @@
+.rdt_Table{
+    margin: 1rem 0px;
+    border: 1px solid #e5e9f2;
+    border-radius: 4px;
+    background: #fff ;
+}
+.rdt_TableHeadRow {
+    min-height: 40px !important;
+    background: #fff;
+}
+.rdt_TableCol > input[type="checkbox"] {
+    margin-left: 10px;
+}
+.rdt_TableCol{
+    padding-right: 10px !important;
+    color: #526484 !important;
+    font-weight: bold !important;
+    font-size: 0.90rem !important;
+    .rdt_TableCol_Sortable {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between !important;
+        &:hover,&:focus {
+            opacity: 1 !important;
+        }
+    }
+    &:last-child {
+        padding-right: 10px !important;
+    }
+}
+.rdt_TableRow{
+    color: #526484 !important;
+    font-size: .875rem !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+}
+.dtr-details {
+    color: #526484 !important;
+    margin: 0 !important;
+}
+// .rdt_TableHeadRow > .rdt_TableCol_Sortable{
+//     color: #526484 !important;
+//     font-size: 1rem !important;
+//     font-weight: bold !important;
+//     line-height: 1.1 !important;
+// }
+.rdt_TableHeadRow > .rdt_TableCol > .custom-control {
+    margin-left: 0px;
+}
