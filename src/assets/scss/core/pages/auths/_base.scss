@@ -18,14 +18,13 @@
             margin-right: 0;
             margin-left: 0;
             .auth-col{
-                padding-right: 0;
                 padding-left: 0;
+                padding-right: 0;
+                .card-preview{
+                    min-height: calc(100vh - 1rem);
+                    border-radius: 24px;
+                }
             }
-
-        }
-        .card-preview{
-            min-height: calc(100vh - 1rem);
-            border-radius: 24px;
         }
     }
     &-footer{
