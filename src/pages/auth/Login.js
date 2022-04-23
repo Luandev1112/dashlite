@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../images/logo.png";
+import Logo from "../../images/logo_white.svg";
 import LogoDark from "../../images/logo-dark.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
@@ -54,10 +54,23 @@ const Login = () => {
       <PageContainer>
         <Block className="nk-block-middle nk-auth-body">
           <Row>
-            <Col lg="8" xxl="12" className="auth-col">
-
+            <Col lg="8" className="auth-col">
+              <Block className="text-center" bodyClass="card-inner-lg">
+                <BlockHead>
+                  <BlockContent>
+                    <Link to={`${process.env.PUBLIC_URL}/`} className="logo-link">
+                      <img className="logo-dark logo-img" src={Logo} alt="logo" />
+                      <BlockTitle tag="h4">TrustBase</BlockTitle>
+                    </Link>
+                    <BlockTitle tag="h4">Login to</BlockTitle>
+                    <BlockDes>
+                      Your Account
+                    </BlockDes>
+                  </BlockContent>
+                </BlockHead>
+              </Block>
             </Col>
-            <Col lg="4" xxl="12" className="auth-col">
+            <Col lg="4" className="auth-col">
               <PreviewCard className="card-bordered" bodyClass="card-inner-lg">
                 <BlockHead>
                   <BlockContent>
