@@ -52,8 +52,8 @@ const Login = () => {
     <React.Fragment>
       <Head title="Login" />
       <PageContainer>
-        <Block className="nk-block-middle nk-auody">
-          <Row className="g-gs">
+        <Block className="nk-block-middle nk-auth-body">
+          <Row>
             <Col lg="8" xxl="12" className="auth-col">
 
             </Col>
