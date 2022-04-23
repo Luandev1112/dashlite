@@ -102,6 +102,8 @@ import QuillPreview from "../pages/components/forms/rich-editor/QuillPreview";
 import TinymcePreview from "../pages/components/forms/rich-editor/TinymcePreview";
 import KnobPreview from "../pages/components/charts/KnobPreview";
 import { FileManagerContextProvider } from "../pages/app/file-manager/FileManagerContext";
+// Login Url
+import Login from "../pages/auth/Login";
 
 const Pages = () => {
   useLayoutEffect(() => {
@@ -340,6 +342,7 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/nioicon`} component={NioIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/svg-icons`} component={SVGIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/`} component={Homepage}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/login`} component={Login}></Route>
         <Route component={RedirectAs404}></Route>
       </Switch>
     </Suspense>

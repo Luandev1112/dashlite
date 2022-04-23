@@ -1,6 +1,6 @@
 {
-  "name": "DashliteReact-Demo1",
-  "homepage": "https://react.dashlite.net/demo1/",
+  "name": "DashliteReact",
+  "homepage": "http://localhost",
   "version": "1.3.0",
   "private": true,
   "dependencies": {
