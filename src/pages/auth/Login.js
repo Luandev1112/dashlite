@@ -55,16 +55,20 @@ const Login = () => {
         <Block className="nk-block-middle nk-auth-body">
           <Row>
             <Col lg="8" className="auth-col">
-              <Block className="text-center" bodyClass="card-inner-lg">
+              <Block className="text-center base-block" bodyClass="card-inner-lg">
                 <BlockHead>
                   <BlockContent>
                     <Link to={`${process.env.PUBLIC_URL}/`} className="logo-link">
                       <img className="logo-dark logo-img" src={Logo} alt="logo" />
                       <BlockTitle tag="h4">TrustBase</BlockTitle>
                     </Link>
-                    <BlockTitle tag="h4">Login to</BlockTitle>
-                    <BlockDes>
-                      Your Account
+                    <BlockTitle className="base-title" tag="h4">
+                      <i>Ease </i> and <i>security </i> at <br />
+                      your fingertips
+                    </BlockTitle>
+                    <BlockDes className="base-description">
+                      TrustBase enables you to securely and <br />
+                        easily borrow / lend money
                     </BlockDes>
                   </BlockContent>
                 </BlockHead>
@@ -75,7 +79,7 @@ const Login = () => {
                 <BlockHead>
                   <BlockContent>
                     <BlockTitle tag="h4">Login to</BlockTitle>
-                    <BlockDes>
+                    <BlockDes className="account">
                       Your Account
                     </BlockDes>
                   </BlockContent>
@@ -92,7 +96,7 @@ const Login = () => {
                   <FormGroup>
                     <div className="form-label-group">
                       <label className="form-label" htmlFor="default-01">
-                        Email or Username
+                        Email Address
                       </label>
                     </div>
                     <div className="form-control-wrap">
@@ -111,11 +115,8 @@ const Login = () => {
                   <FormGroup>
                     <div className="form-label-group">
                       <label className="form-label" htmlFor="password">
-                        Passcode
+                        Password
                       </label>
-                      <Link className="link link-primary link-sm" to={`${process.env.PUBLIC_URL}/auth-reset`}>
-                        Forgot Code?
-                      </Link>
                     </div>
                     <div className="form-control-wrap">
                       <a
@@ -142,45 +143,19 @@ const Login = () => {
                       {errors.passcode && <span className="invalid">{errors.passcode.message}</span>}
                     </div>
                   </FormGroup>
+                  <Link className="link link-success link-sm float-right" to={`${process.env.PUBLIC_URL}/auth-reset`}>
+                    Forgot Password?
+                  </Link>
                   <FormGroup>
-                    <Button size="lg" className="btn-block" type="submit" color="primary">
-                      {loading ? <Spinner size="sm" color="light" /> : "Sign in"}
+                    <Button size="lg" className="btn-block" type="submit" color="success">
+                      {loading ? <Spinner size="sm" color="light" /> : "Login"}
                     </Button>
                   </FormGroup>
                 </Form>
                 <div className="form-note-s2 text-center pt-4">
                   {" "}
-                  New on our platform? <Link to={`${process.env.PUBLIC_URL}/auth-register`}>Create an account</Link>
+                  New to TrustBase? <Link className="link-success" to={`${process.env.PUBLIC_URL}/auth-register`}>Sign-up</Link>
                 </div>
-                <div className="text-center pt-4 pb-3">
-                  <h6 className="overline-title overline-title-sap">
-                    <span>OR</span>
-                  </h6>
-                </div>
-                <ul className="nav justify-center gx-4">
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="#socials"
-                      onClick={(ev) => {
-                        ev.preventDefault();
-                      }}
-                    >
-                      Facebook
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="#socials"
-                      onClick={(ev) => {
-                        ev.preventDefault();
-                      }}
-                    >
-                      Google
-                    </a>
-                  </li>
-                </ul>
               </PreviewCard>
             </Col>
           </Row>

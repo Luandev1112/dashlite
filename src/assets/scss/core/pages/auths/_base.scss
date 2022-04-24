@@ -20,10 +20,46 @@
             .auth-col{
                 padding-left: 0;
                 padding-right: 0;
+                display: table;
+                .base-block{
+                    display: table-cell;
+                    vertical-align: middle;
+                    .logo-link{
+                        .title{
+                            color: #fff;
+                            font-family: monospace;
+                        }
+                    }
+                    .base-title{
+                        margin-top: 4rem;
+                        color: #fff;
+                    }
+                    .base-description{
+                        margin-top: 1rem;
+                        color: #fff;
+                    }
+                }
+
                 .card-preview{
                     min-height: calc(100vh - 1rem);
                     border-radius: 24px;
+                    background-color: #eeeef9;
+                    .card-inner{
+                        .nk-block-head{
+                            margin-top: 3rem;
+                            margin-bottom: 2rem;
+                        }
+                        .account{
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                        }
+
+                        .btn-block{
+                            margin-top: 6rem;
+                        }
+                    }
                 }
+                
             }
         }
     }

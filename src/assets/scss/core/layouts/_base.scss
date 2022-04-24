@@ -3,6 +3,11 @@ body{
     &.nav-shown{
         overflow: hidden;
     }
+    .form-control{
+        border-bottom: solid 4px #acacca;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
 }
 .nk{
     &-body{
