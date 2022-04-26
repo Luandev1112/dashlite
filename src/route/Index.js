@@ -1,4 +1,4 @@
-import React, { Suspense, useLayoutEffect } from "react";
+import React, { Suspense, useLayoutEffect, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { ProductContextProvider } from "../pages/pre-built/products/ProductContext";
 import { UserContextProvider } from "../pages/pre-built/user-manage/UserContext";
@@ -105,17 +105,25 @@ import { FileManagerContextProvider } from "../pages/app/file-manager/FileManage
 // Login Url
 import Login from "../pages/auth/Login";
 
-const Pages = () => {
+const Pages = (props) => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
+
+  const sendData = (type) => {
+    props.setUserType(type);
+  }
 
   return (
     <Suspense fallback={<div />}>
       <Switch>
         {/*Dashboards*/}
-        <Route exact path={`${process.env.PUBLIC_URL}/crypto`} component={Crypto}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/analytics`} component={Analytics}></Route>
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/crypto`}
+          render={ () => <Crypto setUserType={sendData("seller")} /> }>
+        </Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/analytics`} render={ () => <Analytics setUserType={sendData("factor")} />} ></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/invest`} component={Invest}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/_blank`} component={Blank}></Route>
 

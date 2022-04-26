@@ -16,6 +16,7 @@ const Layout = () => {
     header: "white",
     skin: "light",
   });
+  const [userType, setUserType] = useState("backoffice");
 
   useEffect(() => {
     viewChange();
@@ -77,12 +78,11 @@ const Layout = () => {
             mobileView={mobileView}
             theme={themeState.sidebar}
             className={sidebarClass}
+            userType={userType}
           />
           {visibility && mobileView && <div className="nk-sidebar-overlay" onClick={toggleSidebar}></div>}
           <div className="nk-wrap">
-            <Header sidebarToggle={toggleSidebar} setVisibility={setVisibility} fixed theme={themeState.header} />
-            <Pages />
-            <Footer />
+            <Pages setUserType={setUserType} />
           </div>
         </div>
       </div>

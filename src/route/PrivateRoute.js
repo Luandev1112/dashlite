@@ -11,7 +11,7 @@ const PrivateRoute = ({ exact, component: Component, ...rest }) => (
       auth ? (
         <Component {...props} {...rest}></Component>
       ) : (
-        <Redirect to={`${process.env.PUBLIC_URL}/auth-login`}></Redirect>
+        <Redirect to={`${process.env.PUBLIC_URL}/login`}></Redirect>
       )
     }
   ></Route>

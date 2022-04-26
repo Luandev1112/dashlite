@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import menu from "./MenuData";
+import factormenu from "./FactorData";
 import Icon from "../../components/icon/Icon";
 import classNames from "classnames";
 import { NavLink, Link } from "react-router-dom";
@@ -199,7 +200,8 @@ const MenuSub = ({ icon, link, text, sub, sidebarToggle, mobileView, ...props })
   );
 };
 
-const Menu = ({ sidebarToggle, mobileView }) => {
+const Menu = ({ sidebarToggle, mobileView, userType }) => {
+  console.log(userType);
   return (
     <ul className="nk-menu">
       {menu.map((item) =>
