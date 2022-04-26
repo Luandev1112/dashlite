@@ -26,9 +26,9 @@ const Register = () => {
 
   const onFormSubmit = (formData) => {
     setLoading(true);
-    const loginName = "info@softnio.com";
+    const registerName = "info@softnio.com";
     const pass = "123456";
-    if (formData.name === loginName && formData.passcode === pass) {
+    if (formData.name === registerName && formData.passcode === pass) {
       localStorage.setItem("accessToken", "token");
       setTimeout(() => {
         window.history.pushState(
