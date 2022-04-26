@@ -21,7 +21,7 @@ import {
   Col,
 } from "../components/Component";
 
-const CryptoHomePage = () => {
+const CryptoHomePage = (props) => {
   const [sm, updateSm] = useState(false);
   return (
     <React.Fragment>

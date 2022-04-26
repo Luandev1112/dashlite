@@ -25,8 +25,8 @@ const App = () => {
       {/* Auth Pages */}
       <Route exact path={`${process.env.PUBLIC_URL}/auth-success`} component={Success}></Route>
       <Route exact path={`${process.env.PUBLIC_URL}/auth-reset`} component={ForgotPassword}></Route>
-      <Route exact path={`${process.env.PUBLIC_URL}/auth-register`} component={Register}></Route>
-      <Route exact path={`${process.env.PUBLIC_URL}/auth-login`} component={Login}></Route>
+      <Route exact path={`${process.env.PUBLIC_URL}/register`} component={Register}></Route>
+      <Route exact path={`${process.env.PUBLIC_URL}/login`} component={Login}></Route>
 
       {/* Print Pages */}
       <Route exact path={`${process.env.PUBLIC_URL}/invoice-print/:id`} component={InvoicePrint}></Route>
