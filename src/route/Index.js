@@ -105,12 +105,15 @@ import { FileManagerContextProvider } from "../pages/app/file-manager/FileManage
 // Login Url
 import Login from "../pages/auth/Login";
 
+// Factor Urls
+import Portfolio from "../pages/factor/Portfolio";
+
 const Pages = (props) => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
 
-  const sendData = (type) => {
+  const setUser = (type) => {
     props.setUserType(type);
   }
 
@@ -121,10 +124,10 @@ const Pages = (props) => {
         <Route
           exact
           path={`${process.env.PUBLIC_URL}/crypto`}
-          render={ () => <Crypto setUserType={sendData("seller")} /> }>
+          render={ () => <Crypto setUserType={setUser("general")} /> }>
         </Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/analytics`} render={ () => <Analytics setUserType={sendData("factor")} />} ></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/invest`} render={ () => <Invest setUserType={sendData("general")} />} ></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/analytics`} render={ () => <Analytics setUserType={setUser("general")} />} ></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/invest`} render={ () => <Invest setUserType={setUser("general")} />} ></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/_blank`} component={Blank}></Route>
 
         {/*Pre-built Pages*/}
@@ -351,6 +354,11 @@ const Pages = (props) => {
         <Route exact path={`${process.env.PUBLIC_URL}/svg-icons`} component={SVGIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/`} component={Homepage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/login`} component={Login}></Route>
+
+        {/* Factor */}
+        <Route exact path={`${process.env.PUBLIC_URL}/factor/portfolio`} render={ () => <Portfolio setUserType={setUser("factor")} />} ></Route>
+        
+        
         <Route component={RedirectAs404}></Route>
       </Switch>
     </Suspense>

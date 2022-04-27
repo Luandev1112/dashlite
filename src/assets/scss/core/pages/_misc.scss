@@ -20,3 +20,22 @@
         opacity: 1;
     }
 }
+
+.search-bar {
+    display: flex;
+    .form-control {
+        border-bottom-width: 1px;
+        border-radius: 8px;
+    }
+    .refresh-button {
+        background-color: #00004d;
+        border-radius: 8px;
+        margin-left: 12px;
+    }
+    .notification {
+        vertical-align: middle;
+        padding: 6px;
+        margin-left: 12px;
+        font-size: 1.5rem;
+    }
+}

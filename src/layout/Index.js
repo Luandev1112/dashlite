@@ -16,7 +16,7 @@ const Layout = () => {
     header: "white",
     skin: "light",
   });
-  const [userType, setUserType] = useState("backoffice");
+  const [userType, setUserType] = useState("general");
 
   useEffect(() => {
     viewChange();
