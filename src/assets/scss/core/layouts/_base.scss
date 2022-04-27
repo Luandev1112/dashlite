@@ -20,13 +20,17 @@ body{
     }
     &-main{
         position: relative;
+        background: #fff;
     } 
     &-wrap{
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        background-color: #151868;
+        border-radius: 30px;
     }
     &-content{
+        background: #eeeef9;
         padding: $content-gap-y 4px;
         &-fs{
             min-height: calc(100vh - (#{$header-height} + #{$header-height}));
@@ -44,6 +48,8 @@ body{
                 padding-left: 22px;
                 padding-right: 22px;
             }
+            margin: 10px;
+            border-radius: 24px;
         }
     }
 }

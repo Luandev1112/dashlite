@@ -130,7 +130,7 @@ $menu-main-sub-toggle-icon-rtl: $ni-chevron-left !default;
         text-transform: $menu-link-case;
         line-height: $menu-link-lh;
         &:hover,.active > &{
-            color: $menu-link-color-hover;
+            color: $white;
             .count{
                 color: $menu-link-color-hover;
             }
@@ -196,7 +196,6 @@ $menu-main-sub-toggle-icon-rtl: $ni-chevron-left !default;
         line-height: 1;
         flex-grow: 0; 
         flex-shrink: 0;
-        color: $menu-icon-color-base;
         @if($menu_dark_theme_option==true) {
             .is-theme &{
                 color: darken($accent-light, 8%);
@@ -213,7 +212,7 @@ $menu-main-sub-toggle-icon-rtl: $ni-chevron-left !default;
             transition: color .4s, background-color .4s;
         }
         .nk-menu-link:hover &, .nk-menu-item.active > .nk-menu-link & , .nk-menu-item.current-menu > .nk-menu-link & {
-            color: $menu-link-color-hover;
+            // color: $menu-link-color-hover;
             @if($menu_dark_theme_option==true) {
                 .is-theme &{
                     color: $white;
