@@ -29,6 +29,7 @@ $light:				#ebeef2; 		// @100
 $light-alt:			#e5e9f2; 		// @200
 $dark:				#1f2b3a; 		// @900
 $darker:			#0f192a; 		// @950
+$blue:              #151868;
 
 
 ///////////////////////////////////////////
@@ -42,7 +43,7 @@ $header-border-bottom:				$light-alt;
 $header-bg-dark-color:              $darker;
 $header-bg-theme-color:        		darken($accent-dark, 2%);
 
-$sidebar-bg-color:					$lighter;
+$sidebar-bg-color:					$blue;
 $sidebar-border-color:              $light-alt;
 
 $sidebar-bg-dark-color:			    $darker;

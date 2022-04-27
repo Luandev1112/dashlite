@@ -61,7 +61,7 @@ $accent-color:  	#6576ff;
 $accent-light:  	$accent-300;
 $accent-dark:  		#2c3782;
 $accent-dim:  	    #e3e7fe;
-
+$blue-color:        #151868;
 
 $body-bg:			$lighter;
 $body-color:		$base-text;
@@ -744,7 +744,7 @@ $sidebar-transition-name:           ease;
 $sidebar-transition-duration:       450ms;
 $sidebar-overlay:                   rgba($darker,.4); //v120
 
-$sidebar-bg-color:					$lighter;
+$sidebar-bg-color:					$blue-color;
 $sidebar-border-color:              $light-200;
 
 $sidebar-bg-dark-color:			    $darker;
@@ -774,7 +774,7 @@ $header-main-gap-x:                 $content-gap-x;
 $header-main-gap-x-sm:              $content-gap-x-sm; 
 $header-main-gap-y:                 14px;
 $header-main-border-width:          1px;
-$header-height:                     ($header-main-gap-y*2 + $logo-height + $header-main-border-width);
+$header-height:                     124px;
 $header-min-width:                  $min-body-width; 
 
 $header-bg-color:                   $lighter;

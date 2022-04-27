@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import menu from "./MenuData";
 import factormenu from "./FactorData";
+import sellermenu from "./SellerData";
+import adminmenu from "./AdminData";
 import Icon from "../../components/icon/Icon";
 import classNames from "classnames";
 import { NavLink, Link } from "react-router-dom";
@@ -201,10 +203,19 @@ const MenuSub = ({ icon, link, text, sub, sidebarToggle, mobileView, ...props })
 };
 
 const Menu = ({ sidebarToggle, mobileView, userType }) => {
-  console.log(userType);
+  let menudata = null;
+  if(userType == "seller") {
+    menudata = sellermenu;
+  }else if(userType == "factor") {
+    menudata = factormenu;
+  }else if(userType == "backoffice") {
+    menudata = adminmenu;
+  }else {
+    menudata = menu;
+  }
   return (
     <ul className="nk-menu">
-      {menu.map((item) =>
+      {menudata.map((item) =>
         item.heading ? (
           <MenuHeading heading={item.heading} key={item.heading} />
         ) : (

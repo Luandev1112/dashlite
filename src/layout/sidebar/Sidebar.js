@@ -29,16 +29,6 @@ const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView, userType,
   return (
     <div className={classes}>
       <div className="nk-sidebar-element nk-sidebar-head">
-        <div className="nk-menu-trigger">
-          <Toggle className="nk-nav-toggle nk-quick-nav-icon d-xl-none mr-n2" icon="arrow-left" click={sidebarToggle} />
-          <Toggle
-            className={`nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex ${
-              collapseSidebar ? "compact-active" : ""
-            }`}
-            click={toggleCollapse}
-            icon="menu"
-          />
-        </div>
         <div className="nk-sidebar-brand">
           <Logo />
         </div>

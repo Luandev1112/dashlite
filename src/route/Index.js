@@ -124,7 +124,7 @@ const Pages = (props) => {
           render={ () => <Crypto setUserType={sendData("seller")} /> }>
         </Route>
         <Route exact path={`${process.env.PUBLIC_URL}/analytics`} render={ () => <Analytics setUserType={sendData("factor")} />} ></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/invest`} component={Invest}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/invest`} render={ () => <Invest setUserType={sendData("general")} />} ></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/_blank`} component={Blank}></Route>
 
         {/*Pre-built Pages*/}
