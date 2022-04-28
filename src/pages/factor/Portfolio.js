@@ -33,6 +33,8 @@ import {
 
 const Portfolio = () => {
   const [sm, updateSm] = useState(false);
+  const [currencyUnit, setCurrencyUnit] = useState('$');
+  const [totalPrice, setTotalPrice] = useState(100000);
   return (
     <React.Fragment>
       <Head title="Portfolio"></Head>
@@ -60,15 +62,24 @@ const Portfolio = () => {
                     </Col>
                   </Row>
 
-                  <Row className="g-gs" >
+                  <Row className="g-gs chart-block" >
                     <Col sm="12" lg="12" xxl="12">
-                      <BlockTitle>PORTFOLIO</BlockTitle>
-                    </Col>
-                    <Col sm="12" lg="12">
-                     <PieChartExample data={doughnutChartData} />
+                      <BlockTitle className="portfolio-title">PORTFOLIO</BlockTitle>
+                      <PreviewCard className="pie-chart">
+                        <PieChartExample className="pie-chart" data={doughnutChartData} />
+                      </PreviewCard>
                     </Col>
                   </Row>
 
+                  <Row className="g-gs investment-block" >
+                    <Col sm="12" lg="12" xxl="12">
+                      <h6 className="investment-title">TOTAL INVESTMENT</h6>
+                      <BlockTitle className="investment-price">
+                        <span className="currency-unit">{currencyUnit}</span>
+                        <span className="total-price">{totalPrice}</span>
+                      </BlockTitle>
+                    </Col>
+                  </Row>
                 </Col>
                 <Col lg="5" xxl="12">
                   <Row className="g-gs">
