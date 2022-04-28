@@ -33,9 +33,51 @@
         margin-left: 12px;
     }
     .notification {
-        vertical-align: middle;
-        padding: 6px;
         margin-left: 12px;
+        padding: 6px;
         font-size: 1.5rem;
+    }
+
+}
+.chart-block {
+    .portfolio-title{
+        text-decoration: underline;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .pie-chart{
+        width: 200px;
+        height: 200px;
+        background: inherit;
+        border-width: 0px;
+    }
+}
+
+.chart-block::after{
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 38%;
+    height: 36%;
+    border-left: 1px solid #c9cbe5;
+}
+
+.investment-block{
+    .investment-title{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .investment-price{
+        color: #54d3c2; 
+        font-family: unset;
+        display: flex;
+        .currency-unit{
+            font-size: 20px;
+            padding: 10px 5px;
+        }
+        .total-price{
+            font-size: 2.4rem;
+        }
     }
 }
