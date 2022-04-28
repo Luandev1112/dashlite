@@ -40,6 +40,7 @@
 
 }
 .chart-block {
+    position: relative;
     .portfolio-title{
         text-decoration: underline;
         font-size: 14px;
@@ -67,6 +68,7 @@
     .investment-title{
         font-size: 15px;
         font-weight: 600;
+        margin-left: 20px;
     }
     .investment-price{
         color: #54d3c2; 
@@ -78,6 +80,48 @@
         }
         .total-price{
             font-size: 2.4rem;
+        }
+    }
+}
+
+.company-block{
+    .company-card-block{
+        .title{
+            font-size: 15px;
+            margin-left: 24px;
+        }
+        .title_bidding, .title_tosign{
+            color: #646cbb;
+        }
+        .title_topay{
+            color: #00004d;
+        }
+        .title_toreturn{
+            color: #374095;
+        }
+        .company-card{
+            border-radius: 12px;
+            .card-inner{
+                display: inline-flex;
+                padding: 0;
+                .card-prev{
+                    width: 32px;
+                    border-top-left-radius: 12px;
+                    border-bottom-left-radius: 12px;
+                }
+                .bidding{
+                    background-color: #646cbb;
+                }
+                .tosign{
+                    background-color: #646cbb;
+                }
+                .topay{
+                    background-color: #00004d;
+                }
+                .toreturn{
+                    background-color: #374095;
+                }
+            }
         }
     }
 }

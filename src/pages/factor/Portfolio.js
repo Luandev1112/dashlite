@@ -12,6 +12,8 @@ import NewsUsers from "../../components/partials/default/new-users/User";
 import Support from "../../components/partials/default/support-request/Support";
 import Notifications from "../../components/partials/default/notification/Notification";
 import { DropdownToggle, DropdownMenu, Card, UncontrolledDropdown, DropdownItem } from "reactstrap";
+import { companiesData } from "../components/investments/InvestmentsData";
+import CompanyCard from "../components/investments/CompanyCard";
 import {
   Block,
   BlockDes,
@@ -44,6 +46,7 @@ const Portfolio = () => {
             <Col xxl="8" md="8" >
               <Row className="g-gs">
                 <Col lg="7" xxl="12">
+
                   <Row className="g-gs" >
                     <Col sm="12" lg="12" xxl="12">
                       <FormGroup className="search-bar">
@@ -78,6 +81,21 @@ const Portfolio = () => {
                         <span className="currency-unit">{currencyUnit}</span>
                         <span className="total-price">{totalPrice}</span>
                       </BlockTitle>
+                    </Col>
+                  </Row>
+
+                  <Row className="g-gs company-block">
+                    {
+                      companiesData.map((data, i)=>{
+                        return (
+                          <Col sm="12" xxl="12">
+                            <CompanyCard key={i} data={data} />
+                          </Col>
+                        );             
+                      })
+                    }
+                    <Col sm="12" lg="12">
+
                     </Col>
                   </Row>
                 </Col>
