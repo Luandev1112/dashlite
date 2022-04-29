@@ -67,9 +67,9 @@
 
 .portfolio-block{
     border-right: solid 1px #c9cbe5;
-    .porfolio-img{
+    .portfolio-img{
         max-width: 200px;
-        margin: 100px 20px;
+        margin: 80px 20px;
     }
 }
 
@@ -149,6 +149,12 @@
                         tbody{
                             tr{
                                 .td-name{
+                                    .company-logo{
+                                        width: 20px;
+                                        position: relative;
+                                        top: -3px;
+                                        margin-right: 8px;
+                                    }
                                     vertical-align: middle;
                                     font-size: 20px;
                                     color: #313377;

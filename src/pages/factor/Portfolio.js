@@ -15,6 +15,9 @@ import { DropdownToggle, DropdownMenu, Card, UncontrolledDropdown, DropdownItem 
 import { companiesData } from "../components/investments/InvestmentsData";
 import CompanyCard from "../components/investments/CompanyCard";
 import PortfolioImage from "../../images/items/portfolio.svg";
+import { SellerCard, SellerHead, SellerBody } from "../seller/SellerCard";
+import { sellerData } from "../seller/sellerData";
+import { setDeadline } from "../../utils/Utils";
 import {
   Block,
   BlockDes,
@@ -38,6 +41,17 @@ const Portfolio = () => {
   const [sm, updateSm] = useState(false);
   const [currencyUnit, setCurrencyUnit] = useState('$');
   const [totalPrice, setTotalPrice] = useState(100000);
+  const [sellerIndex, setSellerIndex] = useState(-1);
+  const team = [
+    {
+      value: "Abu Bin",
+      label: "Abu Bin",
+      image: null,
+      theme: "purple",
+    },
+    { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
+    { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
+  ];
   return (
     <React.Fragment>
       <Head title="Portfolio"></Head>
@@ -89,25 +103,47 @@ const Portfolio = () => {
                       companiesData.map((data, i)=>{
                         return (
                           <Col sm="12" xxl="12">
-                            <CompanyCard key={i} data={data} />
+                            <CompanyCard key={i} data={data} setSellerIndex={setSellerIndex} />
                           </Col>
                         );             
                       })
                     }
-                    <Col sm="12" lg="12">
-
-                    </Col>
                   </Row>
                 </Col>
               </Row>
             </Col>
             <Col xxl="7" md="7" >
               <Row className="g-gs">
-                <Col lg="5" xxl="12" className="text-center portfolio-block">
-                  <img className="portfolio-img" src={PortfolioImage} alt="Portfolio" />
-                </Col>
-                <Col lg="7" xxl="12">
-                </Col>
+                {sellerIndex == -1 ? (
+                  <React.Fragment>
+                    <Col lg="5" xxl="12" className="text-center portfolio-block">
+                      <img className="portfolio-img" src={PortfolioImage} alt="Portfolio" />
+                    </Col>
+                    <Col lg="7" xxl="12">
+                    </Col>
+                  </React.Fragment>
+                ) : (
+                  <Col lg="12" xxl="12">
+                    <Row className="g-gs">
+                      <Col sm="12" lg="12">
+                        <SellerCard>
+                          <SellerHead 
+                            initial="Orange" 
+                            title="Company Name" 
+                            subtitle="sub title"
+                          />
+                          <SellerBody
+                            desc="description" 
+                            task={3} 
+                            percentage={80} 
+                            date={setDeadline(20)} 
+                            team={team}
+                          ></SellerBody>
+                        </SellerCard>
+                      </Col>
+                    </Row>
+                  </Col>
+                )}
               </Row>
             </Col>
           </Row>
