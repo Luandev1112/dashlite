@@ -45,6 +45,7 @@
         text-decoration: underline;
         font-size: 14px;
         margin-top: 30px;
+        color: #b8b8d2;
     }
 
     .pie-chart{
@@ -64,11 +65,20 @@
     border-left: 1px solid #c9cbe5;
 }
 
+.portfolio-block{
+    border-right: solid 1px #c9cbe5;
+    .porfolio-img{
+        max-width: 200px;
+        margin: 100px 20px;
+    }
+}
+
 .investment-block{
     .investment-title{
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 600;
         margin-left: 20px;
+        color: #7777a3;
     }
     .investment-price{
         color: #54d3c2; 
@@ -87,7 +97,7 @@
 .company-block{
     .company-card-block{
         .title{
-            font-size: 15px;
+            font-size: 18px;
             margin-left: 24px;
         }
         .title_bidding, .title_tosign{
@@ -120,6 +130,57 @@
                 }
                 .toreturn{
                     background-color: #374095;
+                }
+                .card-body{
+                    padding: 1rem;
+                    .table{
+                        thead{
+                            tr:last-child{
+                               th{
+                                   border-bottom-width: 0px;
+                               }     
+                            }
+                            .th{
+                                
+                                font-size: 12px;
+                                color: #c7c7d8;
+                            }
+                        }
+                        tbody{
+                            tr{
+                                .td-name{
+                                    vertical-align: middle;
+                                    font-size: 20px;
+                                    color: #313377;
+                                    font-weight: 600;
+                                    small{
+                                        font-size: 12px;
+                                        color: #555997;
+                                    }
+                                }
+                                .td-price{
+                                    vertical-align: middle;
+                                    color: #54D3C2;
+                                    font-weight: 600;
+                                    .unit{
+                                        font-size: 14px;
+                                        padding: 5px 3px;
+                                        position: relative;
+                                        top: -6px;
+                                    }
+                                    .price{
+                                        font-size: 24px;
+                                    }
+                                }
+                                .td-status{
+                                    vertical-align: middle;
+                                    .icon{
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
