@@ -14,6 +14,7 @@ import Notifications from "../../components/partials/default/notification/Notifi
 import { DropdownToggle, DropdownMenu, Card, UncontrolledDropdown, DropdownItem } from "reactstrap";
 import { companiesData } from "../components/investments/InvestmentsData";
 import CompanyCard from "../components/investments/CompanyCard";
+import PortfolioImage from "../../images/items/portfolio.svg";
 import {
   Block,
   BlockDes,
@@ -43,10 +44,9 @@ const Portfolio = () => {
       <Content>
         <Block>
           <Row className="g-gs">
-            <Col xxl="8" md="8" >
+            <Col xxl="5" md="5" >
               <Row className="g-gs">
-                <Col lg="7" xxl="12">
-
+                <Col lg="12" xxl="12">
                   <Row className="g-gs" >
                     <Col sm="12" lg="12" xxl="12">
                       <FormGroup className="search-bar">
@@ -79,7 +79,7 @@ const Portfolio = () => {
                       <h6 className="investment-title">TOTAL INVESTMENT</h6>
                       <BlockTitle className="investment-price">
                         <span className="currency-unit">{currencyUnit}</span>
-                        <span className="total-price">{totalPrice}</span>
+                        <span className="total-price">{totalPrice.toLocaleString()}</span>
                       </BlockTitle>
                     </Col>
                   </Row>
@@ -99,26 +99,16 @@ const Portfolio = () => {
                     </Col>
                   </Row>
                 </Col>
-                <Col lg="5" xxl="12">
-                  <Row className="g-gs">
-                    <Col sm="6" lg="12" xxl="6">
-                      <PreviewAltCard>
-                        <ActiveSubscription />
-                      </PreviewAltCard>
-                    </Col>
-                    <Col sm="6" lg="12" xxl="6">
-                      <PreviewAltCard>
-                        <AvgSubscription />
-                      </PreviewAltCard>
-                    </Col>
-                  </Row>
-                </Col>
               </Row>
             </Col>
-            <Col xxl="4" md="4" >
-              <PreviewAltCard className="h-100">
-                <SalesOverview />
-              </PreviewAltCard>
+            <Col xxl="7" md="7" >
+              <Row className="g-gs">
+                <Col lg="5" xxl="12" className="text-center portfolio-block">
+                  <img className="portfolio-img" src={PortfolioImage} alt="Portfolio" />
+                </Col>
+                <Col lg="7" xxl="12">
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Block>
