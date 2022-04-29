@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import Icon from "../../components/icon/Icon";
 
-const CompanyTable = ({data}) => {
+const CompanyTable = ({data, setSellerIndex}) => {
   let iconName = '';
   let iconColor = '';
   switch(data.status)
@@ -25,7 +25,7 @@ const CompanyTable = ({data}) => {
       break;
   }
   const companyInfo = (param) => {
-    console.log(param);
+    setSellerIndex(param);
   }
   return (
     <div className="company-div">
@@ -42,7 +42,7 @@ const CompanyTable = ({data}) => {
           
             return (
               <tr className="tr" key={item.id} onClick={() => companyInfo(item.id) }>
-                <td className="text-left td-name">{item.name}<small> ,LTD</small></td>
+                <td className="text-left td-name"><img className="company-logo" src={item.logo}></img>{item.name}<small> ,LTD</small></td>
                 <td className="text-right td-price"><small className="unit">$</small><span className="price">{item.price.toLocaleString()}</span></td>
                 <td className="text-center td-status">
                   <Icon name={ iconName } style={{ color: `${iconColor}` }} />

@@ -16,7 +16,7 @@ import {
 } from "../../../components/Component";
 import CompanyTable from "../../../components/table/ComapnyTable";
 
-const CompanyCard = ({data}) => {
+const CompanyCard = ({data, setSellerIndex}) => {
   let bg_img = null;
   let cardTitle = '';
   switch(data.status)
@@ -46,7 +46,7 @@ const CompanyCard = ({data}) => {
           <PreviewCard className="company-card">
             <div className={data.status + " card-prev"} style={{ backgroundImage: `url(${bg_img})` }} />
             <div className="card-body">
-              <CompanyTable data={data} />
+              <CompanyTable data={data} setSellerIndex={setSellerIndex} />
             </div>
           </PreviewCard>
         </Block>
