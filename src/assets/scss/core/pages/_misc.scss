@@ -192,3 +192,33 @@
         }
     }
 }
+
+.desc-block{
+    .desc-head{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 2px #bebed6;
+    }
+    .desc-body{
+        padding-top: 10px;
+    }
+}
+
+.history-block{
+    .history-head{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 2px #bebed6;
+        em{
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: solid 3px #9c9cbe;
+            font-size: 14px;
+            color: #9c9cbe;
+        }
+    }
+    .history-body{
+        padding-top: 10px;
+    }
+}

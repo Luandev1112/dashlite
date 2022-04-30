@@ -144,13 +144,65 @@ const Portfolio = () => {
                             favorite={seller.favorite}
                           />
                           <SellerBody
-                            desc="description" 
-                            task={3} 
-                            percentage={80} 
-                            date={setDeadline(20)} 
-                            team={team}
+                            seller={seller}
                           ></SellerBody>
                         </SellerCard>
+                      </Col>
+                      <Col sm="12" lg="12" className="desc-block">
+                        <div className="desc-head">
+                          <h6>{ seller.long_name }</h6>
+                          <span className="start-date">SINCE {seller.start_date}</span>
+                        </div>
+                        <div className="desc-body">
+                          <p>{seller.description}</p>
+                        </div>
+                      </Col>
+                      <Col lg="12" xxl="12" className="history-block">
+                        <div className="history-head">
+                           <h6>Deal History</h6>
+                           <UncontrolledDropdown>
+                            <DropdownToggle tag="a" className="btn btn-icon btn-trigger">
+                              <Icon name="more-h"></Icon>
+                            </DropdownToggle>
+                            <DropdownMenu right>
+                              <ul className="link-list-opt no-bdr">
+                                <li>
+                                  <a
+                                    href="#view"
+                                    onClick={(ev) => {
+                                      ev.preventDefault();
+                                    }}
+                                  >
+                                    <Icon name="eye"></Icon>
+                                    <span>View Project</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="#edit"
+                                    onClick={(ev) => {
+                                      ev.preventDefault();
+                                    }}
+                                  >
+                                    <Icon name="edit"></Icon>
+                                    <span>Edit Project</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="#markasdone"
+                                    onClick={(ev) => {
+                                      ev.preventDefault();
+                                    }}
+                                  >
+                                    <Icon name="check-round-cut"></Icon>
+                                    <span>Mark As Done</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </DropdownMenu>
+                          </UncontrolledDropdown>
+                        </div>
                       </Col>
                     </Row>
                   </Col>
