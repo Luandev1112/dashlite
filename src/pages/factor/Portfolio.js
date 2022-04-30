@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "../../layout/head/Head";
 import Content from "../../layout/content/Content";
 import SaleRevenue from "../../components/partials/default/sale-revenue/SaleRevenue";
@@ -42,6 +42,7 @@ const Portfolio = () => {
   const [currencyUnit, setCurrencyUnit] = useState('$');
   const [totalPrice, setTotalPrice] = useState(100000);
   const [sellerIndex, setSellerIndex] = useState(-1);
+  const [seller, setSeller] = useState({});
   const team = [
     {
       value: "Abu Bin",
@@ -52,6 +53,15 @@ const Portfolio = () => {
     { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
     { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
   ];
+  useEffect(()=>{
+    if(sellerIndex > 0) {
+      sellerData.forEach((item) => {
+        if (item.id == sellerIndex) {
+          setSeller(item);
+        }
+      });
+    }
+  }, [sellerIndex, sellerData]);
   return (
     <React.Fragment>
       <Head title="Portfolio"></Head>
@@ -128,9 +138,10 @@ const Portfolio = () => {
                       <Col sm="12" lg="12">
                         <SellerCard>
                           <SellerHead 
-                            initial="Orange" 
-                            title="Company Name" 
-                            subtitle="sub title"
+                            name={seller.name} 
+                            logo={seller.logo} 
+                            score={seller.score}
+                            favorite={seller.favorite}
                           />
                           <SellerBody
                             desc="description" 
