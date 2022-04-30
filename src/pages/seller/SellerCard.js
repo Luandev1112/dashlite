@@ -1,6 +1,6 @@
 import React from "react";
 import { UserAvatar, Icon, PreviewCard, Rating } from "../../components/Component";
-import { DropdownMenu, DropdownToggle, UncontrolledDropdown, Progress } from "reactstrap";
+import { DropdownMenu, DropdownToggle, UncontrolledDropdown, Progress, Row, Col } from "reactstrap";
 import { setDeadlineDays } from "../../utils/Utils";
 
 export const SellerCard = ({ ...props }) => {
@@ -46,44 +46,51 @@ export const SellerHead = ({ name, score, favorite, logo }) => {
   );
 };
 
-export const SellerBody = ({ desc, task, percentage, team, date }) => {
-  var days = setDeadlineDays(date);
+export const SellerBody = ({seller}) => {
   return (
     <React.Fragment>
-      <div className="seller-details">{desc}</div>
+      {/* <div className="seller-details">{seller.description}</div> */}
       <div className="seller-progress">
-        <div className="seller-progress-details">
-          <div className="seller-progress-task">
-            <Icon name="check-round-cut"></Icon>
-            <span>{task} Tasks</span>
-          </div>
-          <div className="seller-progress-percent">{percentage}%</div>
-        </div>
-        <Progress value={percentage}></Progress>
-      </div>
-      <div className="seller-meta">
-        <ul className="seller-users g-1">
-          {team.slice(0, 2).map((item) => {
-            return (
-              <li>
-                <UserAvatar size="sm" text={item.text} theme={item.theme} image={item.image} />
-              </li>
-            );
-          })}
-          {team.length > 2 && (
-            <li>
-              <UserAvatar theme="light" size="sm" text={`+${team.length - 2}`} />
-            </li>
-          )}
-        </ul>
-        <span
-          className={`badge badge-dim badge-${
-            days > 10 ? "light" : days <= 10 && days >= 2 ? "warning" : days === 1 ? "danger" : days === 0 && "success"
-          }`}
-        >
-          <Icon name="clock"></Icon>
-          <span>{days === 0 ? "Done" : days === 1 ? "Due Tomorrow" : days + " Days Left"}</span>
-        </span>
+        <Row className="seller-progress-details">
+          <Col lg="3">
+            <img src={seller.avatar} />
+          </Col>
+          <Col lg="3" className="detail">
+            <div className="location-group">
+              <span className="title">LOCATION</span>
+              <h4>{seller.location}</h4>
+            </div>
+            <div className="verification-group">
+              <span className="title">VERIFICATION</span>
+              <h4>{seller.verification ? ("Verified") : ("Unverified")}</h4>
+            </div>
+          </Col>
+          <Col lg="3" className="detail">
+            <div className="industry-group">
+              <span className="title">INDUSTRY</span>
+              <h4>{seller.industry}</h4>
+            </div>
+            <div className="sector-group">
+              <span className="title">SECTOR</span>
+              <h4>{seller.sector}</h4>
+            </div>
+          </Col>
+          <Col lg="3" className="detail">
+            <div className="deal-group">
+              <span className="title">TOTAL DEAL</span>
+              <h4>
+                <small className="unit">$</small><span className="total_price">{seller.total_price}</span>
+                <span className="deals">{seller.deals} DEALS</span>
+              </h4>
+            </div>
+            <div className="deal-group">
+              <span className="title">RESPONSE TIME</span>
+              <Rating type="clock" className="text-success" initVal={parseInt(seller.response_score)}></Rating>
+            </div>
+          </Col>
+        </Row>
+        <span className="progress-title">SCORE</span>
+        <Progress striped value={parseInt(seller.score * 100 / 5)} color="success"></Progress>
       </div>
     </React.Fragment>
   );
