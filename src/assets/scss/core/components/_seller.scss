@@ -1,32 +1,52 @@
+.seller-card{
+    border-radius: 12px;
+    .card-inner{
+        padding: 1rem;
+    }
+}
 .seller{
     &-head{
         display: flex;
         justify-content: space-between;
         margin-bottom: 1.25rem;
         align-items: flex-start;
+        border-bottom: solid 1px #dbdbe6;
     }
     &-title{
         display: flex;
         align-items: center;
-        @if($rtl==false){
-            margin-right: 0.75rem;
+        .logo{
+            height: 24px;
+            margin-right: 16px;
         }
-        @if($rtl==true){
-            margin-left: 0.75rem;
-        }
-        .user-avatar{
-            @if($rtl==false){
-                margin-right: 1rem;
-            }
-            @if($rtl==true){
-                margin-left: 1rem;
-            }
-        }
+
         .title{
-            font-size: 0.975rem;
+            font-size: 1.4rem;
+            margin-top: 5px;
+            color: #121464;
             &:not(:last-child){
                 margin-bottom: 0.125rem;
             }
+            small{
+                font-size: 13px;
+            }
+        }
+
+        .score{
+            margin-top: 8px;
+            margin-left: 24px;
+            
+        }
+    }
+    &-group{
+        display: flex;
+        font-size: 1.4rem;
+        .favorite{
+            margin-right: 10px;
+            color: #fd5e00;
+        }
+        .message{
+            color: #54d3c2; 
         }
     }
     &-details{

@@ -1,76 +1,47 @@
 import React from "react";
-import { UserAvatar, Icon, PreviewCard } from "../../components/Component";
+import { UserAvatar, Icon, PreviewCard, Rating } from "../../components/Component";
 import { DropdownMenu, DropdownToggle, UncontrolledDropdown, Progress } from "reactstrap";
 import { setDeadlineDays } from "../../utils/Utils";
 
 export const SellerCard = ({ ...props }) => {
   return (
     <React.Fragment>
-      <PreviewCard className="h-100">
-        <div className="project">{props.children}</div>
+      <PreviewCard className="h-100 seller-card">
+        <div className="seller">{props.children}</div>
       </PreviewCard>
     </React.Fragment>
   );
 };
 
-export const SellerHead = ({ color, initial, title, subtitle }) => {
+export const SellerHead = ({ name, score, favorite, logo }) => {
   return (
     <div className="seller-head">
-      <a
-        href="#title"
+      <div
         onClick={(ev) => {
           ev.preventDefault();
         }}
         className="seller-title"
       >
-        <UserAvatar className="sq" theme={color} text={initial} />
+        <img className="logo" src={logo} />
         <div className="seller-info">
-          <h6 className="title">{title}</h6>
-          <span className="sub-text">{subtitle}</span>
+          <h6 className="title">{name}, <small>LTD</small></h6>
         </div>
-      </a>
-      <UncontrolledDropdown>
-        <DropdownToggle tag="a" className="btn btn-icon btn-trigger">
-          <Icon name="more-h"></Icon>
-        </DropdownToggle>
-        <DropdownMenu right>
-          <ul className="link-list-opt no-bdr">
-            <li>
-              <a
-                href="#view"
-                onClick={(ev) => {
-                  ev.preventDefault();
-                }}
-              >
-                <Icon name="eye"></Icon>
-                <span>View Project</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#edit"
-                onClick={(ev) => {
-                  ev.preventDefault();
-                }}
-              >
-                <Icon name="edit"></Icon>
-                <span>Edit Project</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#markasdone"
-                onClick={(ev) => {
-                  ev.preventDefault();
-                }}
-              >
-                <Icon name="check-round-cut"></Icon>
-                <span>Mark As Done</span>
-              </a>
-            </li>
-          </ul>
-        </DropdownMenu>
-      </UncontrolledDropdown>
+        <div className="score">
+          <Rating type="star" className="text-success" initVal={parseInt(score)}></Rating>
+        </div>
+      </div>
+      <div className="seller-group">
+        <div className="favorite">
+          {favorite ? (
+            <Icon name="heart-fill" />
+          ) : (
+            <Icon name="heart" />
+          )}
+          </div>
+        <div className="message">
+          <Icon name="chat" />
+        </div>
+      </div>
     </div>
   );
 };
