@@ -126,10 +126,10 @@ const Portfolio = () => {
               <Row className="g-gs">
                 {sellerIndex == -1 ? (
                   <React.Fragment>
-                    <Col lg="5" xxl="12" className="text-center portfolio-block">
+                    <Col lg="5" xxl="5" className="text-center portfolio-block">
                       <img className="portfolio-img" src={PortfolioImage} alt="Portfolio" />
                     </Col>
-                    <Col lg="7" xxl="12">
+                    <Col lg="7" xxl="7">
                     </Col>
                   </React.Fragment>
                 ) : (

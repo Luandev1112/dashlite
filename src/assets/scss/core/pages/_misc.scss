@@ -209,13 +209,18 @@
         display: flex;
         justify-content: space-between;
         border-bottom: solid 2px #bebed6;
+        h6{
+            padding-top: 14px;
+        }
         em{
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            border: solid 3px #9c9cbe;
+            border: solid 2px #9c9cbe;
             font-size: 14px;
             color: #9c9cbe;
+            font-size: 15px;
+            line-height: 1.4;
         }
     }
     .history-body{
