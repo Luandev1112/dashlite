@@ -17,7 +17,7 @@ import CompanyCard from "../components/investments/CompanyCard";
 import PortfolioImage from "../../images/items/portfolio.svg";
 import { SellerCard, SellerHead, SellerBody } from "../seller/SellerCard";
 import { sellerData } from "../seller/sellerData";
-import { setDeadline } from "../../utils/Utils";
+import { dealsData } from "../seller/dealsData";
 import {
   Block,
   BlockDes,
@@ -43,16 +43,8 @@ const Portfolio = () => {
   const [totalPrice, setTotalPrice] = useState(100000);
   const [sellerIndex, setSellerIndex] = useState(-1);
   const [seller, setSeller] = useState({});
-  const team = [
-    {
-      value: "Abu Bin",
-      label: "Abu Bin",
-      image: null,
-      theme: "purple",
-    },
-    { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
-    { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
-  ];
+  const [dealType, setDealType] = useState("completed");
+  console.log(sellerData[1].deals.completed.length);
   useEffect(()=>{
     if(sellerIndex > 0) {
       sellerData.forEach((item) => {
@@ -162,7 +154,7 @@ const Portfolio = () => {
                            <h6>Deal History</h6>
                            <UncontrolledDropdown>
                             <DropdownToggle tag="a" className="btn btn-icon btn-trigger">
-                              <Icon name="more-h"></Icon>
+                              <Icon className="more" name="more-h"></Icon>
                             </DropdownToggle>
                             <DropdownMenu right>
                               <ul className="link-list-opt no-bdr">
@@ -202,6 +194,12 @@ const Portfolio = () => {
                               </ul>
                             </DropdownMenu>
                           </UncontrolledDropdown>
+                        </div>
+                        <div className="history-body">
+                          <div className="tabs">
+                            <a className={dealType=="completed"?("btn btn-deal completed  active"):"btn btn-deal completed"} onClick={()=>setDealType('completed')}>Completed({dealsData.completed.length})</a>
+                            <a className={dealType=="inprogress"?("btn btn-deal inprogress  active"):"btn btn-deal inprogress"} onClick={()=>setDealType('inprogress')}>In Progress({dealsData.inprogress.length})</a>
+                          </div>
                         </div>
                       </Col>
                     </Row>

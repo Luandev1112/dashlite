@@ -212,7 +212,7 @@
         h6{
             padding-top: 14px;
         }
-        em{
+        .more{
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -225,5 +225,21 @@
     }
     .history-body{
         padding-top: 10px;
+        .tabs{
+            margin-bottom: 4px;
+            .btn{
+                padding: 8px 24px;
+                border-radius: 12px;
+                background: #fff;
+                color: #9898b8;
+            }
+            .btn.active{
+                background: #00004d;
+                color: #fff;
+            }
+            .btn.completed{
+                margin-right: 10px;
+            }
+        }
     }
 }

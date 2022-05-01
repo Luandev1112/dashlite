@@ -16,7 +16,6 @@ export const sellerData = [
     description: "Design and develop the DashLite template for Envato Marketplace",
     score: 4,
     favorite: false,
-    deals: "3",
     totalDeals: "93",
     industry: "Agriculture",
     total_price: "1K+",
@@ -24,16 +23,38 @@ export const sellerData = [
     sector: "Fruits",
     response_score: 4,
     start_date: 2017,
-    team: [
-      {
-        value: "Abu Bin",
-        label: "Abu Bin",
-        image: null,
-        theme: "purple",
-      },
-      { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
-      { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
-    ],
+    deals: {
+      completed: [
+        {
+          value: "Abu Bin",
+          label: "Abu Bin",
+          image: null,
+          theme: "purple",
+        },
+        { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
+        { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
+      ],
+      inprogress: [
+        {
+          value: "Abu Bin",
+          label: "Abu Bin",
+          image: null,
+          theme: "purple",
+        },
+        { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
+        { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
+      ],
+      posting: [
+        {
+          value: "Abu Bin",
+          label: "Abu Bin",
+          image: null,
+          theme: "purple",
+        },
+        { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
+        { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
+      ]
+    },
   },
   {
     id: 2,
@@ -53,15 +74,37 @@ export const sellerData = [
     sector: "Fruits",
     response_score: 3,
     start_date: 2021,
-    team: [
-      {
-        value: "Abu Bin",
-        label: "Abu Bin",
-        image: null,
-        theme: "purple",
-      },
-      { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
-      { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
-    ],
+    deals: {
+      completed: [
+        {
+          value: "Abu Bin",
+          label: "Abu Bin",
+          image: null,
+          theme: "purple",
+        },
+        { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
+        { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
+      ],
+      inprogress: [
+        {
+          value: "Abu Bin",
+          label: "Abu Bin",
+          image: null,
+          theme: "purple",
+        },
+        { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
+        { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
+      ],
+      posting: [
+        {
+          value: "Abu Bin",
+          label: "Abu Bin",
+          image: null,
+          theme: "purple",
+        },
+        { value: "Milagros Betts", label: "Milagros Betts", theme: "pink" },
+        { value: "Ryu Duke", label: "Ryu Duke", theme: "orange" },
+      ]
+    },
   },
 ];

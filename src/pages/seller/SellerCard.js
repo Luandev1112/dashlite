@@ -80,7 +80,7 @@ export const SellerBody = ({seller}) => {
               <span className="title">TOTAL DEAL</span>
               <h4>
                 <small className="unit">$</small><span className="total_price">{seller.total_price}</span>
-                <span className="deals">{seller.deals} DEALS</span>
+                <span className="deals">{seller.totalDeals} DEALS</span>
               </h4>
             </div>
             <div className="deal-group">
