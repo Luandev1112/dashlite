@@ -1,9 +1,9 @@
-import Banana from "../../images/items/banana.svg";
-import Orange from "../../images/items/orange.svg";
-import Peach from "../../images/items/peach.svg";
-import Grape from "../../images/items/grape.svg";
-import Apple from "../../images/items/apple.svg";
-import OrangeAvatar from "../../images/items/avatar-orange.svg";
+import Banana from "../../../images/items/banana.svg";
+import Orange from "../../../images/items/orange.svg";
+import Peach from "../../../images/items/peach.svg";
+import Grape from "../../../images/items/grape.svg";
+import Apple from "../../../images/items/apple.svg";
+import OrangeAvatar from "../../../images/items/avatar-orange.svg";
 
 export const sellerData = [
   {

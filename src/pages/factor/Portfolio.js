@@ -15,9 +15,9 @@ import { DropdownToggle, DropdownMenu, Card, UncontrolledDropdown, DropdownItem 
 import { companiesData } from "../components/investments/InvestmentsData";
 import CompanyCard from "../components/investments/CompanyCard";
 import PortfolioImage from "../../images/items/portfolio.svg";
-import { SellerCard, SellerHead, SellerBody } from "../seller/SellerCard";
-import { sellerData } from "../seller/sellerData";
-import { dealsData } from "../seller/dealsData";
+import { SellerCard, SellerHead, SellerBody } from "../components/seller/SellerCard";
+import { sellerData } from "../components/seller/sellerData";
+import { dealsData } from "../components/seller/dealsData";
 import { CompletedCard } from "../../components/deal/CompletedCard";
 import { ProgressCard } from "../../components/deal/ProgressCard";
 import { PostingCard } from "../../components/deal/PostingCard";
@@ -47,7 +47,6 @@ const Portfolio = () => {
   const [sellerIndex, setSellerIndex] = useState(-1);
   const [seller, setSeller] = useState({});
   const [dealType, setDealType] = useState("completed");
-  console.log(sellerData[1].deals.completed.length);
   useEffect(()=>{
     if(sellerIndex > 0) {
       sellerData.forEach((item) => {
