@@ -18,6 +18,9 @@ import PortfolioImage from "../../images/items/portfolio.svg";
 import { SellerCard, SellerHead, SellerBody } from "../seller/SellerCard";
 import { sellerData } from "../seller/sellerData";
 import { dealsData } from "../seller/dealsData";
+import { CompletedCard } from "../../components/deal/CompletedCard";
+import { ProgressCard } from "../../components/deal/ProgressCard";
+import { PostingCard } from "../../components/deal/PostingCard";
 import {
   Block,
   BlockDes,
@@ -199,6 +202,38 @@ const Portfolio = () => {
                           <div className="tabs">
                             <a className={dealType=="completed"?("btn btn-deal completed  active"):"btn btn-deal completed"} onClick={()=>setDealType('completed')}>Completed({dealsData.completed.length})</a>
                             <a className={dealType=="inprogress"?("btn btn-deal inprogress  active"):"btn btn-deal inprogress"} onClick={()=>setDealType('inprogress')}>In Progress({dealsData.inprogress.length})</a>
+                          </div>
+                          <div className="contents">
+                          {dealType=="completed" ? (
+                              dealsData.completed.map((data, i)=>{
+                                return (
+                                  <CompletedCard deal={data} />
+                                );             
+                              })
+                            ) : (
+                              dealsData.inprogress.map((data, i)=>{
+                                return (
+                                  <ProgressCard deal={data} />
+                                );             
+                              })
+                            )
+                          }
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" xxl="12" className="history-block">
+                        <div className="history-head">
+                           <h6>Posting Deals</h6>
+                        </div>
+                        <div className="history-body">
+                          <div className="contents">
+                          {
+                            dealsData.posting.map((data, i)=>{
+                              return (
+                                <PostingCard deal={data} />
+                              );             
+                            })
+                          }
                           </div>
                         </div>
                       </Col>
