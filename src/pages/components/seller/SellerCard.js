@@ -1,7 +1,6 @@
 import React from "react";
-import { UserAvatar, Icon, PreviewCard, Rating } from "../../components/Component";
+import { Icon, PreviewCard, Rating } from "../../../components/Component";
 import { DropdownMenu, DropdownToggle, UncontrolledDropdown, Progress, Row, Col } from "reactstrap";
-import { setDeadlineDays } from "../../utils/Utils";
 
 export const SellerCard = ({ ...props }) => {
   return (

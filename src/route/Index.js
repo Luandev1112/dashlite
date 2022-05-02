@@ -107,6 +107,7 @@ import Login from "../pages/auth/Login";
 
 // Factor Urls
 import Portfolio from "../pages/factor/Portfolio";
+import Auction from "../pages/factor/Auction";
 
 const Pages = (props) => {
   useLayoutEffect(() => {
@@ -357,7 +358,7 @@ const Pages = (props) => {
 
         {/* Factor */}
         <Route exact path={`${process.env.PUBLIC_URL}/factor/portfolio`} render={ () => <Portfolio setUserType={setUser("factor")} />} ></Route>
-        
+        <Route exact path={`${process.env.PUBLIC_URL}/factor/auction`} render={ () => <Auction setUserType={setUser("factor")} />} ></Route>
         
         <Route component={RedirectAs404}></Route>
       </Switch>
