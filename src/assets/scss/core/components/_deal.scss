@@ -1,0 +1,159 @@
+.deal-card{
+    border-radius: 12px;
+    margin-top: 4px !important;
+    .card-inner{
+        padding: 1rem;
+    }
+}
+.deal{
+    &-head{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        align-items: flex-start;
+        .title{
+            margin-bottom: 0;
+            color: #101362;
+        }
+        span{
+            color: #ebebf1;
+            font-size: 12px;
+        }
+        .price-group{
+            color: #54D3C2;
+            font-weight: 600;
+            .unit{
+                font-size: 14px;
+                padding: 0px 3px;
+                position: relative;
+                top: -3px;
+            }
+            .price{
+                font-size: 20px;
+                color: #54D3C2;
+            }
+        }
+    }
+    &-posting-body{
+        display: flex;
+    }
+    &-details{
+        margin-bottom: 1rem;
+    }
+    &-progress{
+        margin-bottom: 1rem;
+        .progress-title{
+            font-size: 12px;
+            font-weight: 600;
+            color: #7f7fa6;
+        }
+        .progress{
+            height: 1.4rem;
+            border-radius: 8px;
+            width: 90%;
+            .progress-bar-striped{
+                border-radius: 8px;
+                background-size: 1rem 1rem;
+                background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+            }
+        }
+        &-details{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            .detail{
+                padding: 15px 4px;
+                .deal-group{
+                    .unit{
+                        font-size: 12px;
+                        color: #54d3c2;
+                        font-weight: 700;
+                    }
+                    .total_price{
+                        font-size: 24px;
+                        color: #54d3c2;
+                        font-weight: 700;
+                    }
+                    .deals{
+                        font-size: 12px;
+                        font-weight: 800;
+                        color: #7f7fa6;
+                        margin-left: 6px;
+                    }
+                }
+            }
+            .title{
+                color: #c3c3d5;
+                font-size: 12px;
+                font-weight: 700;
+            }
+            h4{
+                font-size: 18px;
+                color: #101362;
+                font-weight: 700;
+            }
+
+        }
+        &-task{
+            display: flex;
+            align-items: center;
+            color: $base-light;
+            .icon{
+                font-size: 1rem;
+                line-height: 1.5rem;
+                @if($rtl==false){
+                    margin-right: 0.25rem;
+                }
+                @if($rtl==true){
+                    margin-left: 0.25rem;
+                }
+            }
+        }
+        &-percent{
+            color: $base-text;
+            font-weight: $fw-medium;
+        }
+    }
+    &-meta{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-users{
+        display: flex;
+        align-items: center;
+    }
+    &-list{
+        &-progress{
+            display: flex;
+            align-items: center;
+            .progress{
+                width: 100px;
+                @if($rtl==false){
+                    margin-right: 0.5rem;
+                }
+                @if($rtl==true){
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xxl){
+    .deal{
+        &-list{
+            &-progress{
+                .progress{
+                    width: 140px;
+                    @if($rtl==false){
+                        margin-right: 1rem;
+                    }
+                    @if($rtl==true){
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
