@@ -6,6 +6,8 @@ import { DropdownToggle, DropdownMenu, Card, UncontrolledDropdown, DropdownItem 
 import DoorImage from "../../images/items/door.svg";
 import AuctionImage from "../../images/items/auction.svg";
 import { auctionData } from "../components/auction/auctionData";
+import { sellerData } from "../components/seller/sellerData";
+import AuctionCompany from "../components/seller/AuctionCompany";
 import {
   Block,
   BlockDes,
@@ -54,8 +56,10 @@ const Auction = () => {
     if(currentTime.getTime() < auctionStarttime)
     {
       setAuctionStatus('upcomming');
-    }else if(auctionStarttime <new Date.getTime() && Date.getTime() < auctionEndtime){
+      
+    }else if(auctionStarttime < currentTime && currentTime < auctionEndtime){
       setAuctionStatus('inprogress');
+      
     }else{
       setAuctionStatus('finished');
     }
@@ -68,9 +72,17 @@ const Auction = () => {
       if(auctionStatus == 'upcomming'){
         timestring = reverseTimecount(auctionData.start_time);
         setTimeArray(timestring.split(''));
+        setMiddleImg(DoorImage);
+        setSubTitle("STATUS");
+        setAuctionTitle("AUCTION STARTS SOON");
+        setActionDescription('The next auction starts in');
       }else if(auctionStatus == 'inprogress'){
         timestring = reverseTimecount(auctionData.end_time);
         setTimeArray(timestring.split(''));
+        setMiddleImg(AuctionImage);
+        setSubTitle("COMPANIES");
+        setAuctionTitle("AUCTION IN PROGRESS");
+        setActionDescription('This auction will close in');
       }
     }, 1000);
     return ()=>{
@@ -112,10 +124,10 @@ const Auction = () => {
 
                   <Row className="g-gs auction-first-block">
                     <Col sm="12" xxl="12" className="col-img">
-                      <img src={ DoorImage } />
+                      <img src={ middleImg } />
                     </Col>
                     <Col sm="12" xxl="12" className="col-title">
-                      <h5>{auctionTitle}</h5>
+                      <h5 className={auctionStatus}>{auctionTitle}</h5>
                     </Col>
                     <Col sm="12" xxl="12" className="col-time">
                       <h6>{auctionDescription}</h6>
@@ -137,6 +149,63 @@ const Auction = () => {
             <Col xxl="8" md="8" className="auction-second">
               <Row className="g-gs">
                 <Col lg="6" xxl="6" className="companies-block">
+                  <Row className="companies-block-head g-gs">
+                    <Col md="6" className="">
+                      <h5 className="title-companies">Companies</h5>
+                    </Col>
+                    <Col md="6" className="">
+                      <UncontrolledDropdown>
+                        <DropdownToggle tag="a" className="btn">
+                          <Icon className="more" name="sort-v"></Icon> SORT 
+                          <h6>NONE</h6>
+                        </DropdownToggle>
+                        <DropdownMenu right>
+                          <ul className="link-list-opt no-bdr">
+                            <li>
+                              <a
+                                href="#view"
+                                onClick={(ev) => {
+                                  ev.preventDefault();
+                                }}
+                              >
+                                <span>ALPHABETIC</span>
+                                <span>
+                                  <Icon name="arrow-long-up"></Icon>
+                                  <Icon name="arrow-long-down"></Icon>
+                                </span>
+                                
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#edit"
+                                onClick={(ev) => {
+                                  ev.preventDefault();
+                                }}
+                              >
+                                <span>SCORE</span>
+                                <span>
+                                  <Icon name="arrow-long-up"></Icon>
+                                  <Icon name="arrow-long-down"></Icon>
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
+                    </Col>
+                  </Row>
+                  <Row className="g-gs">
+                      <Col sm="12" className="">
+                        {
+                          sellerData.map((data, i)=>{
+                            return (
+                              <AuctionCompany seller={data} />
+                            );             
+                          })
+                        }
+                      </Col>
+                  </Row>
                 </Col>
                 <Col lg="6" xxl="6" className="">
                 </Col>
