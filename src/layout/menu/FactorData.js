@@ -2,22 +2,27 @@ const factormenu = [
   {
     icon: "dashlite",
     text: "Portfolio",
-    link: "/",
+    link: "/factor/portfolio",
   },
   {
     icon: "bitcoin-cash",
     text: "Messages",
-    link: "/crypto",
+    link: "/factor/messages",
   },
   {
     icon: "growth",
     text: "Contracts",
-    link: "/analytics",
+    link: "/factor/contracts",
   },
   {
     icon: "coins",
     text: "Opportunity",
-    link: "/invest",
+    link: "/factor/opportunity",
+  },
+  {
+    icon: "coins",
+    text: "Auction",
+    link: "/factor/auction",
   },
   {
     heading: "Pre-built Pages",
@@ -25,42 +30,42 @@ const factormenu = [
   {
     icon: "dashlite",
     text: "Calendar",
-    link: "/",
+    link: "/factor/calendar",
   },
   {
     icon: "bitcoin-cash",
     text: "Finance Records",
-    link: "/crypto",
+    link: "/factor/finance",
   },
   {
     icon: "growth",
     text: "Account Settings",
-    link: "/analytics",
+    link: "/factor/growth",
   },
   {
     icon: "coins",
     text: "App Settings",
-    link: "/invest",
+    link: "/factor/settings",
   },
   {
     icon: "text-rich",
     text: "Main Policy",
-    link: "/email-template",
+    link: "/factor/policy",
   },
   {
     icon: "text-rich",
     text: "FAQs",
-    link: "/email-template",
+    link: "/factor/faqs",
   },
   {
     icon: "text-rich",
     text: "Request",
-    link: "/email-template",
+    link: "/factor/request",
   },
   {
     icon: "text-rich",
     text: "Sign Out",
-    link: "/email-template",
+    link: "/login",
   },
 ];
 export default factormenu;

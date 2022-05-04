@@ -18,7 +18,6 @@ export const DealCard = ({ deal }) => {
 		<div className="badge-bid">
 			<span className="badge-bid-count">2</span>
 		</div>
-		
         <div className="auction-deal">
             <div className="auction-deal-head">
                 <h6 className="title">
