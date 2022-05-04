@@ -152,6 +152,163 @@
     }
 }
 
+
+.auction-company-card{
+    border-radius: 12px;
+    margin-top: 10px !important;
+    .card-inner{
+        padding: 1rem;
+    }
+}
+.auction-company{
+    &-head{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+        align-items: flex-start;
+        border-bottom: solid 1px #dbdbe6;
+    }
+    &-title{
+        display: flex;
+        align-items: center;
+        .logo{
+            height: 24px;
+            margin-right: 16px;
+        }
+
+        .title{
+            font-size: 1.4rem;
+            margin-top: 5px;
+            color: #121464;
+            &:not(:last-child){
+                margin-bottom: 0.125rem;
+            }
+            small{
+                font-size: 13px;
+            }
+        }
+
+        .score{
+            margin-top: 8px;
+            margin-left: 24px;
+            
+        }
+    }
+    &-group{
+        display: flex;
+        font-size: 1.4rem;
+        .favorite{
+            margin-right: 10px;
+            color: #fd5e00;
+        }
+        .message{
+            color: #54d3c2; 
+        }
+    }
+    &-details{
+        margin-bottom: 1rem;
+    }
+    &-progress{
+        .progress-title{
+            font-size: 12px;
+            font-weight: 600;
+            color: #7f7fa6;
+        }
+        .progress{
+            height: 1.4rem;
+            border-radius: 8px;
+            width: 100%;
+            .progress-bar-striped{
+                border-radius: 8px;
+                background-size: 1rem 1rem;
+                background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+            }
+        }
+        &-details{
+            display: flex;
+            justify-content: space-between;
+            .detail{
+                padding: 4px 4px;
+                .deal-group{
+                    .unit{
+                        font-size: 12px;
+                        color: #54d3c2;
+                        font-weight: 700;
+                    }
+                    .total_price{
+                        font-size: 20px;
+                        color: #54d3c2;
+                        font-weight: 700;
+                    }
+                    .deals{
+                        font-size: 12px;
+                        font-weight: 800;
+                        color: #7f7fa6;
+                        margin-left: 6px;
+                    }
+                }
+            }
+            .title{
+                color: #c3c3d5;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            h4{
+                font-size: 16px;
+                color: #101362;
+                font-weight: 700;
+            }
+            img{
+                margin-top: 14px;
+                margin-bottom: 8px;
+            }
+        }
+        &-task{
+            display: flex;
+            align-items: center;
+            color: $base-light;
+            .icon{
+                font-size: 1rem;
+                line-height: 1.5rem;
+                @if($rtl==false){
+                    margin-right: 0.25rem;
+                }
+                @if($rtl==true){
+                    margin-left: 0.25rem;
+                }
+            }
+        }
+        &-percent{
+            color: $base-text;
+            font-weight: $fw-medium;
+        }
+    }
+    &-meta{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-users{
+        display: flex;
+        align-items: center;
+    }
+    &-list{
+        &-progress{
+            display: flex;
+            align-items: center;
+            .progress{
+                width: 100px;
+                @if($rtl==false){
+                    margin-right: 0.5rem;
+                }
+                @if($rtl==true){
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
 @include media-breakpoint-up(xxl){
     .seller{
         &-list{

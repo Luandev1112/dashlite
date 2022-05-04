@@ -25,8 +25,6 @@ import {
 } from "../../components/Component";
 
 const Auction = () => {
-  const [sellerIndex, setSellerIndex] = useState();
-  const [seller, setSeller] = useState({});
   const [currentTime, setCurrentTime] = useState(new Date());
   const [timeArray, setTimeArray] = useState([]);
   const [auctionStatus, setAuctionStatus] = useState('');
@@ -34,6 +32,7 @@ const Auction = () => {
   const [middleImg, setMiddleImg] = useState(DoorImage);
   const [auctionTitle, setAuctionTitle] = useState('AUCTION STARTS SOON');
   const [auctionDescription, setActionDescription] = useState('The next auction starts in');
+  const [auctionDetail, setAuctionDetail] = useState(false);
 
   const pad = (d) => {
     return (d < 10) ? '0' + d.toString() : d.toString();
@@ -147,69 +146,133 @@ const Auction = () => {
               </Row>
             </Col>
             <Col xxl="8" md="8" className="auction-second">
-              <Row className="g-gs">
-                <Col lg="6" xxl="6" className="companies-block">
-                  <Row className="companies-block-head g-gs">
-                    <Col md="6" className="">
-                      <h5 className="title-companies">Companies</h5>
-                    </Col>
-                    <Col md="6" className="">
-                      <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="btn">
-                          <Icon className="more" name="sort-v"></Icon> SORT 
-                          <h6>NONE</h6>
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                          <ul className="link-list-opt no-bdr">
-                            <li>
-                              <a
-                                href="#view"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                }}
-                              >
-                                <span>ALPHABETIC</span>
-                                <span>
-                                  <Icon name="arrow-long-up"></Icon>
-                                  <Icon name="arrow-long-down"></Icon>
-                                </span>
-                                
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#edit"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                }}
-                              >
-                                <span>SCORE</span>
-                                <span>
-                                  <Icon name="arrow-long-up"></Icon>
-                                  <Icon name="arrow-long-down"></Icon>
-                                </span>
-                              </a>
-                            </li>
-                          </ul>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </Col>
-                  </Row>
-                  <Row className="g-gs">
-                      <Col sm="12" className="">
-                        {
-                          sellerData.map((data, i)=>{
-                            return (
-                              <AuctionCompany seller={data} />
-                            );             
-                          })
-                        }
+              {auctionDetail ? (
+                <Row className="g-gs">
+                  <Col lg="12" xxl="12" className="companies-block">
+                    <Row className="companies-block-head g-gs">
+                      <Col md="3" className="">
+                        <h5 className="title-companies">Companies</h5>
                       </Col>
-                  </Row>
-                </Col>
-                <Col lg="6" xxl="6" className="">
-                </Col>
-              </Row>
+                      <Col md="3" className="">
+                        <UncontrolledDropdown>
+                          <DropdownToggle tag="a" className="btn">
+                            <Icon className="more" name="sort-v"></Icon> SORT 
+                            <h6>NONE</h6>
+                          </DropdownToggle>
+                          <DropdownMenu right>
+                            <ul className="link-list-opt no-bdr">
+                              <li>
+                                <a
+                                  href="#view"
+                                  onClick={(ev) => {
+                                    ev.preventDefault();
+                                  }}
+                                >
+                                  <span>ALPHABETIC</span>
+                                  <span>
+                                    <Icon name="arrow-long-up"></Icon>
+                                    <Icon name="arrow-long-down"></Icon>
+                                  </span>
+                                  
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="#edit"
+                                  onClick={(ev) => {
+                                    ev.preventDefault();
+                                  }}
+                                >
+                                  <span>SCORE</span>
+                                  <span>
+                                    <Icon name="arrow-long-up"></Icon>
+                                    <Icon name="arrow-long-down"></Icon>
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </Col>
+                    </Row>
+                    <Row className="g-gs">
+                        <Col sm="12" className="companies-scroll">
+                          {
+                            sellerData.map((data, i)=>{
+                              return (
+                                <AuctionCompany seller={data} setAuctionDetail={setAuctionDetail} />
+                              );             
+                            })
+                          }
+                        </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              ) : (
+                <Row className="g-gs">
+                  <Col lg="6" xxl="6" className="companies-block">
+                    <Row className="companies-block-head g-gs">
+                      <Col md="6" className="">
+                        <h5 className="title-companies">Companies</h5>
+                      </Col>
+                      <Col md="6" className="">
+                        <UncontrolledDropdown>
+                          <DropdownToggle tag="a" className="btn">
+                            <Icon className="more" name="sort-v"></Icon> SORT 
+                            <h6>NONE</h6>
+                          </DropdownToggle>
+                          <DropdownMenu right>
+                            <ul className="link-list-opt no-bdr">
+                              <li>
+                                <a
+                                  href="#view"
+                                  onClick={(ev) => {
+                                    ev.preventDefault();
+                                  }}
+                                >
+                                  <span>ALPHABETIC</span>
+                                  <span>
+                                    <Icon name="arrow-long-up"></Icon>
+                                    <Icon name="arrow-long-down"></Icon>
+                                  </span>
+                                  
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="#edit"
+                                  onClick={(ev) => {
+                                    ev.preventDefault();
+                                  }}
+                                >
+                                  <span>SCORE</span>
+                                  <span>
+                                    <Icon name="arrow-long-up"></Icon>
+                                    <Icon name="arrow-long-down"></Icon>
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
+                      </Col>
+                    </Row>
+                    <Row className="g-gs">
+                        <Col sm="12" className="companies-scroll">
+                          {
+                            sellerData.map((data, i)=>{
+                              return (
+                                <AuctionCompany seller={data} setAuctionDetail={setAuctionDetail} />
+                              );             
+                            })
+                          }
+                        </Col>
+                    </Row>
+                  </Col>
+                  <Col lg="6" xxl="6" className="">
+                  </Col>
+                </Row>
+              )}
             </Col>
           </Row>
         </Block>

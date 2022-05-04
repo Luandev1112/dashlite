@@ -94,6 +94,13 @@
                     }
                 }
             }
+            .companies-scroll{
+                overflow-y: auto;
+                max-height: calc(100vh - 114px);
+            }
+            .companies-scroll::-webkit-scrollbar{
+                width: 0;
+            }
         }
     }
 }

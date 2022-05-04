@@ -1,26 +1,28 @@
 import React from "react";
 import { Icon, PreviewCard, Rating } from "../../../components/Component";
 import { DropdownMenu, DropdownToggle, UncontrolledDropdown, Progress, Row, Col } from "reactstrap";
-import Auction from "../../factor/Auction";
 
-const AuctionCompany = ({ seller }) => {
+const AuctionCompany = ({ seller, setAuctionDetail }) => {
+  const detailEnable = () => {
+    setAuctionDetail(true);
+  }
   return (
     <React.Fragment>
-      <PreviewCard className="seller-card">
-        <div className="seller">
-          <div className="seller-head">
+      <PreviewCard className="auction-company-card" >
+        <div className="auction" onClick={detailEnable}>
+          <div className="auction-company-head">
             <div
               onClick={(ev) => {
                 ev.preventDefault();
               }}
-              className="seller-title"
+              className="auction-company-title"
             >
               <img className="logo" src={seller.logo} />
-              <div className="seller-info">
+              <div className="auction-company-info">
                 <h6 className="title">{seller.name}, <small>LTD</small></h6>
               </div>
             </div>
-            <div className="seller-group">
+            <div className="auction-company-group">
               <div className="favorite">
                 {seller.favorite ? (
                   <Icon name="heart-fill" />
@@ -33,8 +35,8 @@ const AuctionCompany = ({ seller }) => {
               </div>
             </div>
           </div>
-          <div className="seller-progress">
-            <Row className="seller-progress-details">
+          <div className="auction-company-progress">
+            <Row className="auction-company-progress-details">
               <Col lg="4">
                 <img src={seller.avatar} />
                 <div className="score">
@@ -66,10 +68,10 @@ const AuctionCompany = ({ seller }) => {
                 <div className="sector-group">
                   <span className="title">SECTOR</span>
                   <h4>{seller.sector}</h4>
-                  <div className="deal-group">
-                    <span className="title">RESPONSE TIME</span>
-                    <Rating type="clock" className="text-success" initVal={parseInt(seller.response_score)}></Rating>
-                  </div>
+                </div>
+                <div className="deal-group">
+                  <span className="title">RESPONSE TIME</span>
+                  <Rating type="clock" className="text-success" initVal={parseInt(seller.response_score)}></Rating>
                 </div>
               </Col>
             </Row>
