@@ -7,7 +7,9 @@ import DoorImage from "../../images/items/door.svg";
 import AuctionImage from "../../images/items/auction.svg";
 import { auctionData } from "../components/auction/auctionData";
 import { sellerData } from "../components/seller/sellerData";
+import { dealsData } from "../components/seller/dealsData";
 import AuctionCompany from "../components/seller/AuctionCompany";
+import { DealCard } from "../../components/deal/DealCard";
 import {
   Block,
   BlockDes,
@@ -200,7 +202,20 @@ const Auction = () => {
                           {
                             sellerData.map((data, i)=>{
                               return (
-                                <AuctionCompany seller={data} setAuctionDetail={setAuctionDetail} />
+								<Row className="g-gs">
+									<Col sm="6">
+										<AuctionCompany seller={data} setAuctionDetail={setAuctionDetail} />
+									</Col>
+									<Col sm="6" className="auction-scroll">
+									{
+										dealsData.posting.map((data, i)=>{
+										  return (
+											<DealCard deal={data} />
+										  );             
+										})
+									}
+									</Col>
+								</Row>
                               );             
                             })
                           }

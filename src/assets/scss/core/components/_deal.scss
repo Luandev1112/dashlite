@@ -5,6 +5,85 @@
         padding: 1rem;
     }
 }
+.auction-deal{
+    &-head{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        align-items: flex-start;
+        .title{
+            margin-bottom: 0;
+            color: #101362;
+        }
+        span{
+            color: #ebebf1;
+            font-size: 12px;
+        }
+        .price-group{
+            color: #54D3C2;
+            font-weight: 600;
+            .unit{
+                font-size: 14px;
+                padding: 0px 3px;
+                position: relative;
+                top: -3px;
+            }
+            .price{
+                font-size: 20px;
+                color: #54D3C2;
+            }
+        }
+    }
+    &-posting-body{
+        display: flex;
+		.deal-detail{
+			width: 100%;
+			.read-or-hide{
+				display: block;
+				text-decoration: underline;
+				color: #54D3C2;
+			}
+		}
+		.additional{
+			padding: 0px 6px;
+			max-width: 128px;
+			margin-top: -28px;
+			.price-block{
+				text-align: center;
+				border-radius: 8px;
+				background: #54d3c2;
+				color: #fff;
+				.price-group{
+					background: #eefbf9;
+					color: #54d3c2;
+					border-radius: 8px;
+					.unit{
+						font-size: 12px;
+					}
+					.price{
+						font-size: 16px;
+					}
+				}
+			}
+			.attachment-group{
+				border-radius: 8px;
+				border: solid 1px #72729d;
+				margin: 10px 0px;
+				padding: 4px;
+				h5{
+					color: #000;
+					font-size: 16px;
+					text-align: center;
+				}
+				p{
+					color: #bfbfd2;
+					font-size: 12px;
+				}
+			}
+		}
+    }
+}
+
 .deal{
     &-head{
         display: flex;
