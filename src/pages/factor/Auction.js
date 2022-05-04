@@ -202,20 +202,20 @@ const Auction = () => {
                           {
                             sellerData.map((data, i)=>{
                               return (
-								<Row className="g-gs">
-									<Col sm="6">
-										<AuctionCompany seller={data} setAuctionDetail={setAuctionDetail} />
-									</Col>
-									<Col sm="6" className="auction-scroll">
-									{
-										dealsData.posting.map((data, i)=>{
-										  return (
-											<DealCard deal={data} />
-										  );             
-										})
-									}
-									</Col>
-								</Row>
+                                <Row className="g-gs">
+                                  <Col sm="6">
+                                    <AuctionCompany seller={data} setAuctionDetail={setAuctionDetail} />
+                                  </Col>
+                                  <Col sm="6" className="auction-scroll">
+                                  {
+                                    dealsData.posting.map((data, i)=>{
+                                      return (
+                                      <DealCard deal={data} />
+                                      );             
+                                    })
+                                  }
+                                  </Col>
+                                </Row>
                               );             
                             })
                           }
