@@ -32,9 +32,9 @@ const Login = () => {
       localStorage.setItem("accessToken", "token");
       setTimeout(() => {
         window.history.pushState(
-          `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`,
+          `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/factor/portfolio"}`,
           "auth-login",
-          `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`
+          `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/factor/portfolio"}`
         );
         window.location.reload();
       }, 2000);
@@ -58,7 +58,7 @@ const Login = () => {
               <Block className="text-center base-block" bodyClass="card-inner-lg">
                 <BlockHead>
                   <BlockContent>
-                    <Link to={`${process.env.PUBLIC_URL}/`} className="logo-link">
+                    <Link to={`${process.env.PUBLIC_URL}/factor/portfolio`} className="logo-link">
                       <img className="logo-dark logo-img" src={Logo} alt="logo" />
                       <BlockTitle tag="h4">TrustBase</BlockTitle>
                     </Link>

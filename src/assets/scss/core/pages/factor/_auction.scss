@@ -30,6 +30,9 @@
                 .inprogress{
                     color: #54d3c2;
                 }
+                .finished{
+                    color: #00004d;
+                }
             }
             .col-time{
                 margin-top: 1rem;
@@ -54,6 +57,13 @@
                         color: #7f7fa6;
                         font-size: 28px;
                         font-weight: 600;
+                    }
+                }
+                .col-result{
+                    text-align: center;
+                    &-img{
+                        max-width: 200px;
+                        margin: 20px;
                     }
                 }
             }
