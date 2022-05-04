@@ -98,7 +98,7 @@
                 overflow-y: auto;
                 max-height: calc(100vh - 114px);
             }
-            .companies-scroll::-webkit-scrollbar{
+            .companies-scroll.scroll-disable::-webkit-scrollbar{
                 width: 0;
             }
 			.auction-scroll{
@@ -106,10 +106,9 @@
                 max-height: 280px;
 				margin-top: 16px;
 				padding: 4px !important;
+				padding-right: 20px !important;
 			}
-			.auction-scroll::-webkit-scrollbar{
-                width: 16px;
-            }
+
         }
     }
 }

@@ -196,6 +196,125 @@ const Auction = () => {
                           </DropdownMenu>
                         </UncontrolledDropdown>
                       </Col>
+					  <Col lg="6" xxl="6" className="">
+						<Row className="g-gs">
+							<Col lg="6" xxl="6" className="">
+								<UncontrolledDropdown>
+								  <DropdownToggle tag="a" className="btn">
+									<Icon className="more" name="sort-v"></Icon> SORT 
+									<h6>NONE</h6>
+								  </DropdownToggle>
+								  <DropdownMenu right>
+									<ul className="link-list-opt no-bdr">
+									  <li>
+										<a
+										  href="#view"
+										  onClick={(ev) => {
+											ev.preventDefault();
+										  }}
+										>
+										  <span>CHECKED</span>
+										</a>
+									  </li>
+									  <li>
+										<a
+										  href="#edit"
+										  onClick={(ev) => {
+											ev.preventDefault();
+										  }}
+										>
+										  <span>NOT CHECKED</span>
+										</a>
+									  </li>
+									</ul>
+								  </DropdownMenu>
+								</UncontrolledDropdown>
+							</Col>
+							<Col lg="6" xxl="6" className="">
+								<UncontrolledDropdown>
+								  <DropdownToggle tag="a" className="btn">
+									<Icon className="more" name="sort-v"></Icon> SORT 
+									<h6>NONE</h6>
+								  </DropdownToggle>
+								  <DropdownMenu right>
+									<ul className="link-list-opt no-bdr">
+									  <li>
+										<a
+										  href="#view"
+										  onClick={(ev) => {
+											ev.preventDefault();
+										  }}
+										>
+										  <span>SELLER NAME</span>
+										  <span>
+											<Icon name="arrow-long-up"></Icon>
+											<Icon name="arrow-long-down"></Icon>
+										  </span>
+										  
+										</a>
+									  </li>
+									  <li>
+										<a
+										  href="#edit"
+										  onClick={(ev) => {
+											ev.preventDefault();
+										  }}
+										>
+										  <span>DEAL NAME</span>
+										  <span>
+											<Icon name="arrow-long-up"></Icon>
+											<Icon name="arrow-long-down"></Icon>
+										  </span>
+										</a>
+									  </li>
+									  <li>
+										<a
+										  href="#edit"
+										  onClick={(ev) => {
+											ev.preventDefault();
+										  }}
+										>
+										  <span>AMOUNT</span>
+										  <span>
+											<Icon name="arrow-long-up"></Icon>
+											<Icon name="arrow-long-down"></Icon>
+										  </span>
+										</a>
+									  </li>
+									  <li>
+										<a
+										  href="#edit"
+										  onClick={(ev) => {
+											ev.preventDefault();
+										  }}
+										>
+										  <span>POST DATE</span>
+										  <span>
+											<Icon name="arrow-long-up"></Icon>
+											<Icon name="arrow-long-down"></Icon>
+										  </span>
+										</a>
+									  </li>
+									  <li>
+										<a
+										  href="#edit"
+										  onClick={(ev) => {
+											ev.preventDefault();
+										  }}
+										>
+										  <span>SCORE</span>
+										  <span>
+											<Icon name="arrow-long-up"></Icon>
+											<Icon name="arrow-long-down"></Icon>
+										  </span>
+										</a>
+									  </li>
+									</ul>
+								  </DropdownMenu>
+								</UncontrolledDropdown>
+							</Col>
+						</Row>
+					  </Col>
                     </Row>
                     <Row className="g-gs">
                         <Col sm="12" className="companies-scroll">
@@ -273,7 +392,7 @@ const Auction = () => {
                       </Col>
                     </Row>
                     <Row className="g-gs">
-                        <Col sm="12" className="companies-scroll">
+                        <Col sm="12" className="companies-scroll scroll-disable">
                           {
                             sellerData.map((data, i)=>{
                               return (

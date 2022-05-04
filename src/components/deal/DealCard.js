@@ -12,6 +12,13 @@ export const DealCard = ({ deal }) => {
   return (
     <React.Fragment>
       <PreviewCard className="deal-card">
+		<div className="badge-message">
+			<span className="badge-message-count">1</span>
+		</div>
+		<div className="badge-bid">
+			<span className="badge-bid-count">2</span>
+		</div>
+		
         <div className="auction-deal">
             <div className="auction-deal-head">
                 <h6 className="title">

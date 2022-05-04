@@ -4,6 +4,54 @@
     .card-inner{
         padding: 1rem;
     }
+	.badge{
+		&-message{
+			display: block;
+			position: absolute;
+			right: -16px;
+			top: -8px;
+			padding: 8px;
+			background: #fd5e00;
+			border-radius: 50%;
+			border: solid 2px #eeeef9;
+			&-count{
+				border: solid 2px #fff;
+				width: 18px;
+				height: 18px;
+				display: block;
+				font-size: 10px;
+				text-align: center;
+				line-height: 14px;
+				font-weight: 600;
+				color: #fff;
+				border-top-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+			}
+		}
+		&-bid{
+			display: block;
+			position: absolute;
+			right: -16px;
+			top: 30px;
+			padding: 8px;
+			background: #00004d;
+			border-radius: 50%;
+			border: solid 2px #eeeef9;
+			&-count{
+				border: solid 2px #fff;
+				width: 18px;
+				height: 18px;
+				display: block;
+				font-size: 10px;
+				text-align: center;
+				line-height: 14px;
+				font-weight: 600;
+				color: #fff;
+				border-radius: 50%;
+			}
+		}
+		
+	}
 }
 .auction-deal{
     &-head{
